@@ -135,7 +135,9 @@ class RunCommand(ActionBase):
             self.detached_switch.set_active(False)
         else:
             # remove possibly present label
+            self.set_top_label("")
             self.set_center_label("")
+            self.set_bottom_label("")
         self.set_settings(settings)
 
     def on_detached_changed(self, switch, _):
