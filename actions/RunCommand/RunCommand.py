@@ -68,7 +68,9 @@ class RunCommand(ActionBase):
 
         result = self.run_command(settings.get("command", None))
         if settings.get("display_output", False):
+            self.set_top_label(result)
             self.set_center_label(result)
+            self.set_bottom_label(result)
 
         if restart_timer:
             if self.get_is_present() and not settings.get("keep_auto_run_in_background", False): #TODO: Find a better solution
