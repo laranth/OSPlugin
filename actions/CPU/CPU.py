@@ -26,4 +26,6 @@ class CPU(ActionBase):
 
     def update(self):
         percent = round(psutil.cpu_percent())
+        self.set_top_label(text=f"{percent}%", font_size=24)
         self.set_center_label(text=f"{percent}%", font_size=24)
+        self.set_bottom_label(text=f"{percent}%", font_size=24)
